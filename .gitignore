@@ -1,0 +1,4 @@
+dataset/frames/
+dataset/masks/
+.ipynb_checkpoints
+__pycache__/

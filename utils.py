@@ -2,7 +2,7 @@ import os
 import random
 
 import torch
-from covid_dataset import CovidDataset
+from .covid_dataset import CovidDataset
 from torch.utils.data import DataLoader, random_split
 
 def save_checkpoint(state, filename="unet_checkpoint.pth.tar"):

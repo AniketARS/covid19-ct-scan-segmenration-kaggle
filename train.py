@@ -5,9 +5,9 @@ from albumentations.pytorch import ToTensorV2
 from tqdm import tqdm
 import torch.nn as nn
 import torch.optim as optim
-from unet import UNET
+from .unet import UNET
 
-from utils import (
+from .utils import (
     load_checkpoint,
     save_checkpoint,
     get_loaders,
@@ -83,7 +83,7 @@ def main():
 
     if LOAD_MODEL:
         load_checkpoint(torch.load("unet_checkpoint.pth.tar"))
-        
+
     scaler = torch.cuda.amp.grad_scaler.GradScaler()
     for epoch in range(NUM_EPOCHS):
         train_fn(train_loader, model, optimizer, loss, scaler)
